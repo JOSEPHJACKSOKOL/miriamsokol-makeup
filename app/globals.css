@@ -1,0 +1,133 @@
+@import "tailwindcss";
+
+:root {
+  /* Primary - Deep Espresso */
+  --color-espresso: #2C2420;
+  --color-espresso-light: #4A3F38;
+
+  /* Secondary - Warm Taupe */
+  --color-taupe: #9C8B7E;
+  --color-taupe-light: #C4B8AD;
+
+  /* Accent - Rose Gold Metallic */
+  --color-rose-gold: #B4838D;
+  --color-rose-gold-light: #D4A5AD;
+  --color-rose-gold-metallic: #C9A087;
+
+  /* Neutrals */
+  --color-cream: #FAF7F2;
+  --color-warm-white: #FDFCFA;
+  --color-sand: #E8E0D8;
+  --color-stone: #D1C7BC;
+
+  /* Text */
+  --color-text-primary: #2C2420;
+  --color-text-secondary: #6B5D52;
+  --color-text-muted: #9C8B7E;
+
+  /* Background */
+  --background: #FDFCFA;
+  --foreground: #2C2420;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-espresso: var(--color-espresso);
+  --color-espresso-light: var(--color-espresso-light);
+  --color-taupe: var(--color-taupe);
+  --color-taupe-light: var(--color-taupe-light);
+  --color-rose-gold: var(--color-rose-gold);
+  --color-rose-gold-light: var(--color-rose-gold-light);
+  --color-cream: var(--color-cream);
+  --color-warm-white: var(--color-warm-white);
+  --color-sand: var(--color-sand);
+  --color-stone: var(--color-stone);
+  --color-text-primary: var(--color-text-primary);
+  --color-text-secondary: var(--color-text-secondary);
+  --color-text-muted: var(--color-text-muted);
+
+  --font-display: var(--font-playfair);
+  --font-serif: var(--font-cormorant);
+  --font-sans: var(--font-inter);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography utilities */
+.font-display {
+  font-family: var(--font-playfair), Georgia, serif;
+}
+
+.font-serif {
+  font-family: var(--font-cormorant), Garamond, serif;
+}
+
+/* Elegant underline animation */
+.link-underline {
+  position: relative;
+  text-decoration: none;
+}
+
+.link-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: currentColor;
+  transition: width 0.3s ease;
+}
+
+.link-underline:hover::after {
+  width: 100%;
+}
+
+/* Smooth image loading */
+img {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+img[data-loading="true"] {
+  opacity: 0;
+}
+
+/* Selection styling */
+::selection {
+  background-color: var(--color-rose-gold-light);
+  color: var(--color-espresso);
+}
+
+/* Scrollbar styling for webkit browsers */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-cream);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-taupe-light);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-taupe);
+}
